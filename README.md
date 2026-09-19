@@ -1,14 +1,27 @@
 # Provider Delegation Orchestrator
 
-`cline-delegator` is the historical plugin name. The project itself is a local, provider-agnostic orchestration layer for delegating large tasks from a strong orchestrator model to cheaper/free worker models while keeping the orchestrator's context compact and retaining control over correctness.
+Provider Delegation Orchestrator is a local, provider-agnostic orchestration layer for delegating large tasks from a strong orchestrator model to cheaper/free worker models while keeping the orchestrator's context compact and retaining control over correctness.
 
-Today the bundled worker executor is Cline CLI and the primary client is Codex through MCP. The orchestration core does not depend on Cline-specific process construction: additional providers/clients can be added behind the executor and protocol boundaries.
+The project currently ships as a Codex plugin under the historical plugin name `cline-delegator`. It exposes an MCP tool surface plus a Codex skill for automatic delegation of large tasks. Cline CLI is the bundled worker executor today, but the orchestration runtime is designed around pluggable executors rather than a Codex↔Cline-only bridge.
+
+Codex is currently the primary orchestration client through MCP. The orchestration core does not depend on Cline-specific process construction: additional providers/clients can be added behind the executor and protocol boundaries.
 
 ## Why it exists
 
 Large codebase audits, research, log triage, architecture reviews, and broad implementation tasks can consume a large amount of orchestrator context. This project lets the orchestrator decompose such work into independently checkable branches, run workers in parallel, and receive compact structured results instead of full transcripts.
 
 The orchestrator remains responsible for the final answer and for checking decision-critical claims.
+
+## Codex plugin
+
+The repository includes a complete Codex plugin package:
+
+- `.codex-plugin/plugin.json` for plugin metadata;
+- `.mcp.json` for the MCP server/tool configuration;
+- `skills/delegate-to-cline/` for the Codex delegation skill;
+- `scripts/cline_delegator_mcp.py` as the local orchestration/MCP runtime.
+
+In Codex, the skill can decide that a task is large enough to delegate, create an orchestration DAG, launch worker branches, collect compact results, run verification/replanning, and return only the useful evidence back to the orchestrator context.
 
 ## High-level flow
 
