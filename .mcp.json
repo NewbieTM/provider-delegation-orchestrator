@@ -1,0 +1,136 @@
+{
+  "mcpServers": {
+    "cline_delegator": {
+      "command": "/usr/bin/python3",
+      "args": [
+        "./scripts/cline_delegator_mcp.py"
+      ],
+      "enabled": true,
+      "startup_timeout_sec": 10,
+      "tool_timeout_sec": 3600,
+      "default_tools_approval_mode": "approve",
+      "tools": {
+        "delegate_submit": {
+          "approval_mode": "approve",
+          "output_token_limit": 4000
+        },
+        "delegate_get": {
+          "approval_mode": "approve",
+          "output_token_limit": 4000
+        },
+        "delegate_events": {
+          "approval_mode": "approve",
+          "output_token_limit": 6000
+        },
+        "delegate_result": {
+          "approval_mode": "approve",
+          "output_token_limit": 12000
+        },
+        "delegate_cancel": {
+          "approval_mode": "approve",
+          "output_token_limit": 4000
+        },
+        "orchestration_create": {
+          "approval_mode": "approve",
+          "output_token_limit": 4000
+        },
+        "orchestration_plan": {
+          "approval_mode": "approve",
+          "output_token_limit": 8000
+        },
+        "orchestration_add_branches": {
+          "approval_mode": "approve",
+          "output_token_limit": 8000
+        },
+        "orchestration_escalate_branch": {
+          "approval_mode": "approve",
+          "output_token_limit": 8000
+        },
+        "orchestration_get": {
+          "approval_mode": "approve",
+          "output_token_limit": 12000
+        },
+        "orchestration_packet": {
+          "approval_mode": "approve",
+          "output_token_limit": 24000
+        },
+        "orchestration_record_verification": {
+          "approval_mode": "approve",
+          "output_token_limit": 8000
+        },
+        "orchestration_auto_verify": {
+          "approval_mode": "approve",
+          "output_token_limit": 12000
+        },
+        "orchestration_replan": {
+          "approval_mode": "approve",
+          "output_token_limit": 12000
+        },
+        "orchestration_advance": {
+          "approval_mode": "approve",
+          "output_token_limit": 12000
+        },
+        "orchestration_cancel": {
+          "approval_mode": "approve",
+          "output_token_limit": 8000
+        },
+        "cline_savings_report": {
+          "approval_mode": "approve",
+          "output_token_limit": 4000
+        },
+        "cline_run_details": {
+          "approval_mode": "approve",
+          "output_token_limit": 4000
+        },
+        "cline_trace_list": {
+          "approval_mode": "approve",
+          "output_token_limit": 8000
+        },
+        "cline_trace_get": {
+          "approval_mode": "approve",
+          "output_token_limit": 16000
+        },
+        "cline_dashboard_start": {
+          "approval_mode": "approve",
+          "output_token_limit": 4000
+        },
+        "cline_prune": {
+          "approval_mode": "approve",
+          "output_token_limit": 4000
+        }
+      },
+      "env_vars": [
+        "HOME",
+        "PATH",
+        "CLINE_DELEGATOR_ALLOWED_ROOTS",
+        "CLINE_DELEGATOR_MAX_CONCURRENT",
+        "CLINE_DELEGATOR_ADAPTIVE_CONCURRENCY",
+        "CLINE_DELEGATOR_STATE_DIR",
+        "CLINE_DELEGATOR_THINKING",
+        "CLINE_DELEGATOR_MODEL",
+        "CLINE_DELEGATOR_FALLBACK_MODELS",
+        "CLINE_BIN",
+        "CODEX_THREAD_ID",
+        "CODEX_SESSION_ID",
+        "CODEX_TURN_ID",
+        "CLINE_DELEGATOR_PREFERRED_MODEL",
+        "CLINE_DELEGATOR_RAW_RETENTION_DAYS",
+        "CLINE_DELEGATOR_MAX_RUN_DIRS",
+        "CLINE_DELEGATOR_TELEMETRY_MAX_RECORDS",
+        "CLINE_DELEGATOR_REQUEST_WORKERS",
+        "CLINE_DELEGATOR_REQUEST_CAPACITY"
+      ],
+      "env": {
+        "CLINE_DELEGATOR_MAX_CONCURRENT": "3",
+        "CLINE_DELEGATOR_ADAPTIVE_CONCURRENCY": "1",
+        "CLINE_DELEGATOR_THINKING": "high",
+        "CLINE_DELEGATOR_PREFERRED_MODEL": "cline-free/deepseek-v4.1-flash",
+        "CLINE_DELEGATOR_RAW_RETENTION_DAYS": "30",
+        "CLINE_DELEGATOR_MAX_RUN_DIRS": "500",
+        "CLINE_DELEGATOR_TELEMETRY_MAX_RECORDS": "5000",
+        "CLINE_DELEGATOR_REQUEST_WORKERS": "8",
+        "CLINE_DELEGATOR_REQUEST_CAPACITY": "32"
+      }
+    }
+  }
+}

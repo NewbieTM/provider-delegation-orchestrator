@@ -1,0 +1,12 @@
+interface:
+  display_name: "Cline Delegator"
+  short_description: "Plan and delegate large work to local Cline"
+  default_prompt: "Use $delegate-to-cline to plan and offload a large independently checkable analysis to Cline, then verify the key evidence."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "cline_delegator"
+      description: "Local bridge to the configured Cline CLI"
+      transport: "stdio"
+policy:
+  allow_implicit_invocation: true

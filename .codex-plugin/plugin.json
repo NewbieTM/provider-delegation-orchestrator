@@ -1,0 +1,27 @@
+{
+  "name": "cline-delegator",
+  "version": "0.7.0+codex.20260919160150",
+  "description": "Provider-agnostic durable task orchestration with verification, replanning, source-aware semantic reuse, pluggable executors, and live observability; ships with a Cline executor.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Cline Delegator",
+    "shortDescription": "Durable provider-agnostic task orchestration; Cline executor included.",
+    "longDescription": "Provides a provider-agnostic orchestration runtime for durable bounded jobs and executable DAG task graphs with pluggable executors. The bundled Cline adapter adds local worker execution, while the shared runtime provides atomic dependencies, admission-controlled scheduling, token budgets, conservative claim verification, independent verifier branches, dynamic replanning, source-aware verified-only semantic cache reuse, model/fallback telemetry, MCP Tasks support, cancellation, isolated worktrees, retained compact metadata, and a localhost DAG/timeline dashboard.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Local MCP"
+    ],
+    "defaultPrompt": [
+      "Delegate a large analysis to Cline with a planned DAG.",
+      "Audit this codebase in parallel and return verified evidence.",
+      "Open the Cline delegation trace dashboard."
+    ]
+  },
+  "mcpServers": "./.mcp.json"
+}
